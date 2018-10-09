@@ -55,7 +55,7 @@ int main(int argc, char *argv[]){
     filePath=filePath+"/matrix.data";
     vector<peakLocation> peakGroup;
     peakLocation singlePeak;
-    cout<<filePath<<endl;
+    //cout<<filePath<<endl;
     ifstream inputFile(filePath);
     if (!inputFile){
         cout<<"Cannot open file.\n";
@@ -132,7 +132,10 @@ int main(int argc, char *argv[]){
 
   
 start_time=clock();
-    ofstream answerOutput ("final.peak");
+    string outputFile;
+    outputFile.assign(argv[1]);
+    outputFile=outputFile+"/final.peak";
+    ofstream answerOutput (outputFile);
     if (answerOutput.is_open()){        
         answerOutput<<peakGroup.size()<<"\n";
         for(int i=0; i<peakGroup.size();i++)
