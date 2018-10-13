@@ -144,6 +144,14 @@ start_time=clock();
         }
     }
     else cout<<"unable to open file!";
+    peakGroup.clear();
+    vector<peakLocation>().swap(peakGroup);
+    vector<vector<int>>().swap(field);
+
+
+
+
+
     end_time=clock();
         
     
@@ -152,9 +160,6 @@ start_time=clock();
     cout<<"read file:"<<readFile_time<<endl;
     cout<<"cal:"<<costTime<<endl;
     cout<<"output:"<<ouputTime<<endl;
-    //cout<<
-
-    //delete[] field;
 
     }
     catch(...){
